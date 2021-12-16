@@ -1,0 +1,15 @@
+* {
+    background: black;
+    color: blanchedalmond;
+}
+
+.form-container {
+    padding: 25px;
+}
+
+h1 {
+    background-color: blanchedalmond;
+    color: black;
+    text-align: center;
+    padding: 20px;
+}
