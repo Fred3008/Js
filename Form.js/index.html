@@ -16,35 +16,38 @@
     <h1>Form</h1>
     <div class="form-container">
         <form class="row g-3 needs-validation" novalidate>
-            <div class="col-md-4 position-relative">
-                <label for="validationTooltip01" class="form-label">First name</label>
-                <input type="text" class="form-control" id="firstName" value="" required>
+            <div class="col-md-4 position-relative  name-container">
+                <label for="name" class="form-label">First name</label>
+                <input type="text" autocomplete="off" class="form-control" id="name" value="" required>
                 <div class="valid-tooltip">
                     Looks good!
+                    <span></span>
                 </div>
             </div>
-            <div class="col-md-4 position-relative">
-                <label for="validationTooltip02" class="form-label">Last name</label>
-                <input type="text" class="form-control" id="validationTooltip02" value="" required>
+            <div class="col-md-4 position-relative lastName-container">
+                <label for="lastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="lastName" value="" required>
                 <div class="valid-tooltip">
                     Looks good!
+                    <span></span>
                 </div>
             </div>
-            <div class="col-md-4 position-relative">
-                <label for="validationTooltipUsername" class="form-label">Username</label>
+            <div class="col-md-4 position-relative email-container">
+                <label for="email" class="form-label">Email</label>
                 <div class="input-group has-validation">
                     <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
-                    <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
+                    <input type="text" class="form-control" id="email" aria-describedby="validationTooltipUsernamePrepend" required>
                     <div class="invalid-tooltip">
-                        Please choose a unique and valid username.
+
                     </div>
                 </div>
+                <span>Email incorect</span>
             </div>
             <div class="col-md-6 position-relative">
                 <label for="validationTooltip03" class="form-label">City</label>
                 <input type="text" class="form-control" id="validationTooltip03" required>
                 <div class="invalid-tooltip">
-                    Please provide a valid city.
+
                 </div>
             </div>
             <div class="col-md-3 position-relative">
@@ -58,14 +61,15 @@
                 </div>
             </div>
             <div class="col-md-3 position-relative">
-                <label for="validationTooltip05" class="form-label">Zip</label>
-                <input type="text" class="form-control" id="validationTooltip05" required>
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" required>
                 <div class="invalid-tooltip">
-                    Please provide a valid zip.
+                    Password
                 </div>
+                <span></span>
             </div>
             <div class="col-12">
-                <button class="btn btn-primary" type="submit" onclick="onSubmit()">Submit form</button>
+                <input class="btn btn-primary" type="submit" value="Valider">
             </div>
 
         </form>

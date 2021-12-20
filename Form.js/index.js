@@ -1,16 +1,36 @@
-function validateName() {
-    let name = document.getElementById("firstName").value;
-    if (name.length == 0) {
-        prompt('Name is required', 'name-error', 'red')
+const inputs = document.querySelectorAll('input[type="text"], input[type="password]');
 
-        return false
-    }
+const pseudoChecked = (value) => {
+    console.log(value);
 }
-validateName()
+const emailChecked = () => {
 
-let submit = document.querySelector('button')
-
-function onSubmit() {
-    console.log("submit")
 }
-onSubmit()
+const passwordChecked = () => {
+
+}
+const confirmChecked = () => {
+
+}
+
+inputs.forEach((input) => {
+    input.addEventListener("input", (e) => {
+        console.log(e.target.value);
+        switch (e.target.id) {
+            case "pseudo":
+                pseudoChecked(e.target.value);
+                break;
+            case "email":
+                emailChecked();
+                break
+            case "password":
+                passwordChecked();
+                break
+            case "confirm":
+                confirmChecked();
+                break
+            default:
+                null;
+        }
+    })
+})
