@@ -24,6 +24,7 @@ let google = {
 
 }
 
+
 for (let name in google) {
     console.log(name);
 
@@ -34,3 +35,4 @@ let clee = Object.keys(google)
 for (i = 0; i < clee.length; i++) {
     console.log(google[clee[i]]);
 }
+console.log(google.transactions[[1], [2]].valeur);
