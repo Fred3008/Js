@@ -5,6 +5,12 @@
 
 .form-container {
     padding: 25px;
+    /* width: 400px; */
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 h1 {
@@ -12,4 +18,75 @@ h1 {
     color: black;
     text-align: center;
     padding: 20px;
+}
+
+input[type="text"]:hover {
+    filter: brightness(105%);
+    transform: translateX(2px);
+}
+
+input[type="submit"]:hover {
+    filter: brightness(105%);
+    transform: translateX(2px);
+}
+
+.error input {
+    color: red;
+    border: 1px solid red;
+}
+
+.error span {
+    visibility: visible;
+    color: red;
+    opacity: 1;
+}
+
+.progressRed {
+    background: red;
+    width: 33%;
+    visibility: visible;
+}
+
+.progressBlue {
+    background: rgb(9, 157, 237);
+    width: 67%;
+    visibility: visible;
+}
+
+.progressGreen {
+    background: rgb(13, 206, 13);
+    width: 100%;
+    visibility: visible;
+}
+
+#security span {
+    display: inline;
+}
+
+input[type="submit"] {
+    border: none;
+    background: linear-gradient(65deg, #16d9e7, #5ef9a4);
+    width: 50%;
+    margin: 12px auto 0;
+    padding: 10px;
+    border-radius: 150px;
+    font-size: 1.2rem;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    filter: brightness(105%);
+    transform: translateX(2px);
+}
+
+span {
+    margin-bottom: 10px;
+    display: block;
+    font-size: 0.8rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    color: red;
 }
