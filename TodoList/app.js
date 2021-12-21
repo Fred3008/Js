@@ -1,54 +1,37 @@
-var enterButton = document.getElementById("enter");
-var input = document.getElementById("userInput");
-var ul = document.querySelector("ul");
-var item = document.getElementsByTagName("li");
+const list = document.getElementById('list');
+const form = document.querySelector('form');
+const item = document.getElementById('item');
+  
+// add element
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  list.innerHTML += `<li>${item.value}</li>`;
+  storage();
+  item.value = "";
+});
 
+// remove element
+list.addEventListener('click', (e) => {
+  if(e.target.classList.contains('checked')){
+    e.target.remove();
+  } else {
+    e.target.classList.add('checked');
+  }
+  storage();
+});
 
-
-function inputLength() {
-    return input.value.length;
+// storage part
+function storage() {
+  window.localStorage.todoList = list.innerHTML;
 }
-
-
-function createListElement() {
-
-    var li = document.createElement("li");
-    li.appendChild(document.createTextNode(input.value));
-    ul.appendChild(li);
-    input.value = "";
-
-    function crossOut() {
-        li.classList.toggle("done");
-    }
-
-    li.addEventListener("click", crossOut);
-
-    var dBtn = document.createElement("button");
-    dBtn.appendChild(document.createTextNode("X"));
-    li.appendChild(dBtn);
-    dBtn.addEventListener("click", deleteListItem);
-
-    function deleteListItem() {
-        li.classList.add("delete");
-    }
-
-
+function getValues() {
+  let storageContent = window.localStorage.todoList;
+  if(!storageContent) {
+    list.innerHTML = 
+      `<li>Cliquez sur un todo pour le supprimer</li>`;
+  }
+  else {
+    list.innerHTML = storageContent;
+  }
 }
-
-
-function addListAfterClick() {
-
-    if (inputLength() > 0) {
-        createListElement();
-    }
-}
-
-function addListAfterKeypress(event) {
-    if (inputLength() > 0 && event.which === 13) {
-        createListElement();
-    }
-}
-
-enterButton.addEventListener("click", addListAfterClick);
-
-input.addEventListener("keypress", addListAfterKeypress);
+getValues();
